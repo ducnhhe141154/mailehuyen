@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        button {
+            text-align: center;
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: 2px solid #4f9154;
+            border-radius: 25px;
+            background-color: #191919;
+            color: wheat;
+            transition: 0.25s;
+            font-family: sans-serif;
+        }
+
+        button:hover {
+            width: 70%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border-radius: 25px;
+            background-color: #4f9154;
+            color: wheat;
+        }
+
+        input[type=text],
+        input[type=password] {
+            text-align: center;
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 3px solid #3498db;
+            box-sizing: border-box;
+            background-color: #191919;
+            color: cornsilk;
+            border-radius: 25px;
+            transition: 0.25s;
+            outline: none;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            text-align: center;
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 3px solid #4f9154;
+            box-sizing: border-box;
+            background-color: #191919;
+            color: cornsilk;
+        }
+
+        input[type=text]:hover,
+        input[type=password]:hover {
+            text-align: center;
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            box-sizing: border-box;
+            background-color: #191919;
+            color: cornsilk;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+
+        }
+
+        .login {
+            background-color: #191919;
+            width: 300px;
+            height: 400px;
+            padding: 40px;
+            position: absolute;
+            transition: cubic-bezier(0.77, 0, 0.175, 1);
+            color: wheat;
+            border: 3px solid #34495e;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+
+
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #34495e;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="login" id="login">
+        <h1>Đăng Nhập</h1>
+        <input type="text" autocomplete="off" placeholder="Nhập tên . . ." id="name" />
+        <input type="password" autocomplete="off" placeholder="Mật khẩu . . ." id="psw" />
+        <h3 id="mess" style="display: none;color: #a01515">Sai mẹ rồi còn đéo đâu !</h3>
+        <br><br>
+
+        <button onclick="submit()">Xác nhận</button>
+    </div>
+    <script>
+        function submit() {
+            var name = document.getElementById("name").value;
+            var pass = document.getElementById("psw").value;
+            if (name === "duc" && pass === "123") {
+                window.location = "Home.html";
+                document.getElementById("mess").style.display = "none";
+            }
+            else {
+                if (name !== "duc") {
+                    document.getElementById("name").style.border = "3px solid #a01515";
+                }
+                if (pass !== "123") {
+                    document.getElementById("psw").style.border = "3px solid #a01515";
+                }
+
+                document.getElementById("mess").style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
